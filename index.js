@@ -17,29 +17,30 @@ multipleOfaNumber(10); //Buzz
 multipleOfaNumber(15); //FizzBuzz
 multipleOfaNumber(22); //Not a multiple of 3 or 5
 
-const highYearQualifier = (i) => {
-  if (i % 365 == 0) {
-    console.log("A common year.");
-  } else if (i % 366 == 0) {
-    console.log("A leap year.");
-  } else {
-    console.log(
-      "You made a mistake. Please enter the correct number of days in a year!"
-    );
-  }
+const highYearQualifier = (i) => {  
+    if (i % 4 == 0) {
+      console.log("A leap year.");
+    } else if (!Number.isInteger(i)) {
+      console.log(
+        "You made a mistake. Please enter the correct number of days in a year!"
+      );
+    } else {
+      console.log("A common year.");
+    } 
 };
 
-highYearQualifier(365); //A common year.
-highYearQualifier(366); //A leap year.
-highYearQualifier(44); // You made a mistake. Please enter the correct number of days in a year!
+highYearQualifier(2024); // A leap year.
+highYearQualifier(2025); // A common year.
+highYearQualifier(2026); //A common year.
+highYearQualifier(2027); //A common year.
+highYearQualifier(2028); //A leap year.
+highYearQualifier(1.5); //You made a mistake. Please enter the correct number of days in a year!
+highYearQualifier(); //You made a mistake. Please enter the correct number of days in a year!
 
 const yourAge = (age) => {
-  let lastCharacter = age == 0 ? "$" : age.toString().split("").pop();
+  let lastCharacter = age.toString().split("").pop();
 
-  switch (lastCharacter) {
-    case "$":
-      console.log("You made a mistake. Please enter your age correctly");
-      break;
+  switch (lastCharacter) {    
     case "1":
       console.log("Вам" + " " + age + " " + "рік");
       break;
@@ -58,11 +59,11 @@ const yourAge = (age) => {
       break;
 
     default:
-      console.log("Unknown");
+      console.log("You made a mistake. Please enter your age correctly");
   }
 };
 
-yourAge(0); // You made a mistake. Please enter your age correctly
+yourAge(0); // Вам 0 років
 yourAge(21); // Вам 21 рік;
 yourAge(22); // Вам 22 роки;
 yourAge(66); // Вам 66 років;
