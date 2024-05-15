@@ -38,7 +38,15 @@ highYearQualifier(); //You made a mistake. Please enter the correct number of da
 const yourAge = (age) => {
   try {
     let cobString = "Вам" + " " + age + " ";
-    switch (5 <= age && age <= 20 ? "$" : 105 <= age && age <= 120 ? "$" : age >= 200 ? "default" : age.toString().split("").pop()) {
+    switch (
+      5 <= age && age <= 20
+        ? "$"
+        : 105 <= age && age <= 120
+        ? "$"
+        : age >= 200
+        ? "nonsense"
+        : age.toString().split("").pop()
+    ) {
       case "$":
         console.log(cobString + "років!");
         break;
@@ -58,6 +66,9 @@ const yourAge = (age) => {
       case "9":
         console.log(cobString + "років");
         break;
+      case "nonsense":
+        console.log("cannot be true");
+        break;
 
       default:
         console.log("You made a mistake. Please enter your age correctly");
@@ -74,4 +85,4 @@ yourAge(12); // Вам 11 років!
 yourAge(22); // Вам 22 роки;
 yourAge(66); // Вам 66 років;
 yourAge(); //  Error: Cannot read properties of undefined (reading 'toString')
-yourAge(200);
+yourAge(200); // cannot be true
