@@ -33,7 +33,7 @@ highYearQualifier(365); //A common year.
 highYearQualifier(366); //A leap year.
 highYearQualifier(44); // You made a mistake. Please enter the correct number of days in a year!
 
-let yourAge = (age) => {
+const yourAge = (age) => {
   let lastCharacter = age == 0 ? "$" : age.toString().split("").pop();
 
   switch (lastCharacter) {
