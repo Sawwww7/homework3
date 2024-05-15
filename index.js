@@ -1,4 +1,4 @@
-const multipleOfaNumber = (i) => {  
+const multipleOfaNumber = (i) => {
   if (i % 3 == 0 && i % 5 == 0) {
     console.log("FizzBuzz");
   } else if (i % 3 == 0) {
@@ -14,7 +14,6 @@ multipleOfaNumber(3); // Fizz
 multipleOfaNumber(10); //Buzz
 multipleOfaNumber(15); //FizzBuzz
 multipleOfaNumber(22); //Not a multiple of 3 or 5
-
 
 const highYearQualifier = (i) => {
   if (i % 4 == 0) {
@@ -36,14 +35,10 @@ highYearQualifier(2028); //A leap year.
 highYearQualifier(1.5); //You made a mistake. Please enter the correct number of days in a year!
 highYearQualifier(); //You made a mistake. Please enter the correct number of days in a year!
 
-
 const yourAge = (age) => {
   try {
-    let cobString =("Вам" + " "+ age + " " );
-    switch (
-      (lastCharacter =
-        5 <= age && age <= 20 ? "$" : age.toString().split("").pop())
-    ) {
+    let cobString = "Вам" + " " + age + " ";
+    switch (5 <= age && age <= 20 ? "$" : age.toString().split("").pop()) {
       case "$":
         console.log(cobString + "років!");
         break;
@@ -62,7 +57,7 @@ const yourAge = (age) => {
       case "8":
       case "9":
         console.log(cobString + "років");
-        break;   
+        break;
 
       default:
         console.log("You made a mistake. Please enter your age correctly");
@@ -79,4 +74,3 @@ yourAge(12); // Вам 11 років!
 yourAge(22); // Вам 22 роки;
 yourAge(66); // Вам 66 років;
 yourAge(); //  Error: Cannot read properties of undefined (reading 'toString')
-
