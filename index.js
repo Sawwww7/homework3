@@ -15,6 +15,16 @@ multipleOfaNumber(10); //Buzz
 multipleOfaNumber(15); //FizzBuzz
 multipleOfaNumber(22); //Not a multiple of 3 or 5
 
+const multipleOfaNumber2 = (i) => {  
+  i % 3 == 0 && i % 5 == 0
+    ? console.log("FizzBuzz")
+    : i % 3 == 0
+    ? console.log("Fizz")
+    : i % 5 == 0
+    ? console.log("Buzz")
+    : console.log("Not a multiple of 3 or 5");
+};
+
 const highYearQualifier = (i) => {
   if (i % 4 == 0) {
     console.log("A leap year.");
@@ -34,6 +44,11 @@ highYearQualifier(2027); //A common year.
 highYearQualifier(2028); //A leap year.
 highYearQualifier(1.5); //You made a mistake. Please enter the correct number of days in a year!
 highYearQualifier(); //You made a mistake. Please enter the correct number of days in a year!
+
+const highYearQualifier2 = (i) => {i % 4 == 0 ? console.log("A leap year."):!Number.isInteger(i)?  console.log(
+  "You made a mistake. Please enter the correct number of days in a year!"
+) :console.log("A common year.")}
+
 
 const yourAge = (age) => {
   try {
